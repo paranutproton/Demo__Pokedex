@@ -94,5 +94,6 @@ $resultArray = array();
     $intNumField = sizeof($resultArray);
 	echo "<b>Table pokedex have $intNumField Records.</b><br>"; 
     
+    
     ทำให้ obj query พัง ???
 -->
