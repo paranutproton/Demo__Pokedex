@@ -8,23 +8,54 @@
 </head>
 <body>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://localhost/pokemon.php">
+      <img src="https://cdn-icons-png.flaticon.com/512/287/287221.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      POKEDEX
+    </a>
+    <!-- Look -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> 
+    <!--  -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://localhost/pokemon.php">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Redirect
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="http://localhost/pokemon.php">main_page</a></li>
+            <li><a class="dropdown-item" href="http://localhost/save.php">save_page (Don't Click)</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="http://localhost/show.php">show_page</a></li>
+          </ul>
+          <li class="nav-item">
+          <a class="nav-link" href="https://www.serebii.net/" style="color:green">Serebii</a>
+        </li>
+        </li>
+      </ul>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="DON'T search pls" aria-label="Search">
+             <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+  </div>
+</nav>
 <?php
     $objConnect = mysqli_connect("127.0.0.1:3306","root","1234") or die("Error Connect to Database");
     mysqli_select_db($objConnect,"Pokemon"); 
     $strSQL = "SELECT * FROM pokedex";
     $objQuery = mysqli_query($objConnect,$strSQL) or die ("Error Query [".$strSQL."]");
     $intNumField = mysqli_num_rows($objQuery);
-    // $row = var_dump (mysqli_fetch_array($objQuery));
-    // echo var_dump(mysqli_fetch_array($objQuery));
-    #echo var_dump($row);
-    #echo var_dump($objQuery);
-    // $resultArray = array();
-	// while($row = mysqli_fetch_assoc($objQuery)){ 
-    //     $resultArray[]=$row; // array of dict in each row ?
-    // }
-    // $intNumField = sizeof($resultArray);
-	echo "<b>Table pokedex have $intNumField Records.</b><br>"; 
-    echo "<table width='600' border='1', class='tablecenter'> 
+    echo "<br>";
+	  echo "<span style='color: red; font-size: 30px;'><center><b>Table pokedex have $intNumField Records.</b></center>"; 
+    echo "<br>";
+    echo "<table style='background-color:#FFFFFF' width='600' border='1', class='tablecenter'> 
     <tr>
     <th>pokemon_id</th>
     <th>pokemon_name</th>
@@ -42,10 +73,24 @@
     echo "</tr>";
     }
     echo "</table>";
-
+    
     mysqli_close($objConnect);
 ?>
 </body>
+    <form>
+        <div class="text-center">
+        <br>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </div>
+    </form>
+    <style>
+  body {
+    background-image: url('https://s.isanook.com/ga/0/ui/227/1135633/pokemon_scarlet_violet_8.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+</style>
 </html>
 
 <?php
