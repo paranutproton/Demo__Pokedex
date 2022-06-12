@@ -29,6 +29,14 @@ td.colorfy {
   color: white;
 }
 
+/* #bodypkmn {
+  background-image: url('https://s.isanook.com/ga/0/ui/227/1135633/pokemon_scarlet_violet_8.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+} */
+
+
 /* The hero image */
 .hero-image {
 /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */

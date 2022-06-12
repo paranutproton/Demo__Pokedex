@@ -42,6 +42,9 @@
           </ul>
           <li class="nav-item">
           <a class="nav-link" href="https://www.serebii.net/" style="color:green">Serebii</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="http://localhost/goplay.html" style="color:red">goplay</a>
         </li>
         </li>
       </ul>
@@ -57,13 +60,17 @@
 <table style="background-color:#000000" width="700" border="1" class="tablecenter table-dark">
   <tr>
      <!--<th width="91"> <div align="center">pokemon_id </div></th>-->
-    <th width="160"> <div style="text-align:center" >pokemon_name </div></th>
-    <th width="198"> <div style="text-align:center">pokemon_type </div></th>
-    <th width="97"> <div style="text-align:center">pokemon_gen </div></th>
+    <th width="200"> <div style="text-align:center" >pokemon_name </div></th>
+    <th width="200"> <div style="text-align:center">pokemon_type </div></th>
+    <th width="200"> <div style="text-align:center">pokemon_gen </div></th>
   </tr>
   <tr>
     <!--<td><div align="center"><input type="number" name="txtpokemon_id" size="5"></div></td>-->
-    <td><input type="text" name="txtpokemon_name" size="20"></td>
+    <td>
+      <div class="mb-0">
+        <input class="form-control" type="text" name="txtpokemon_name" placeholder="enter pkmn name" style="text-align:center" width="20" required>
+      </div>
+    </td>
     <td><div class="form-floating">
       <select name="txtpokemon_type" class="form-select" id="floatingSelect" aria-label="Floating label select example" required>
         <option disabled selected value="">Open this select menu</option>
@@ -86,7 +93,11 @@
       <label for="floatingSelect">Works with selects</label>
     </div>
     </td>
-    <td><div style="text-align:center"><input type="number" name="txtpokemon_gen" size="2" required></div></td>
+    <td>
+      <div class="mb-0">
+        <input class="form-control" type="number" name="txtpokemon_gen" placeholder="enter pkmn gen" style="text-align:center" size="1" required>
+      </div>
+    </td>
   </tr>
   </table>
   <br>
@@ -95,7 +106,8 @@
   </div>  
   </form>
 </body>
-<style>
+<!-- embed-css -->
+<style> 
   body {
     background-image: url('https://s.isanook.com/ga/0/ui/227/1135633/pokemon_scarlet_violet_8.jpg');
     background-repeat: no-repeat;
